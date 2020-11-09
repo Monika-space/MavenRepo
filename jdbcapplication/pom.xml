@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.manvenpractice</groupId>
-  <artifactId>FirstMavenProject</artifactId>
+  <artifactId>jdbcapplication</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>FirstMavenProject</name>
+  <name>jdbcapplication</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -21,20 +21,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    <groupId>com.oracle.database.jdbc</groupId>
+    <artifactId>ojdbc8</artifactId>
+    <version>19.8.0.0</version>
+    <scope>test</scope>
+    </dependency>
   </dependencies>
-  
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.6</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.9</version>
-        </plugin>
-    </plugins>
-  </reporting>
 </project>
