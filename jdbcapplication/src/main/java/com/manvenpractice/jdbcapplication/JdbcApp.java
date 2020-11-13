@@ -14,9 +14,14 @@ public class JdbcApp
        }
        else
        {
-    	   System.out.println("connected");
+    	   System.out.println("connected to oracle DB");
        }
-       //ResultSet rs = st.executeQuery("select * from Employee");
+       ResultSet rs = st.executeQuery("select * from Employee");
+       while(rs.next()) 
+       {
+    	System.out.println(rs.getString(1)+"---"+rs.getString(2));   
+       }
        con.close();
+       
 	}
 }
