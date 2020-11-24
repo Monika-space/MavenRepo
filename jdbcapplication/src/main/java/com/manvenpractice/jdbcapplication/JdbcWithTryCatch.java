@@ -19,17 +19,21 @@ public class JdbcWithTryCatch {
 		{
 			System.out.println("connection not successful, pls review your code again!!");
 		}
-		Statement st = con.createStatement();
+		Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 		Scanner sc = new Scanner(System.in);
+		//System.out.println("Enter the sql query you want to execute");
+		int update_result =st.executeUpdate("update Employee set emp_id='MA5037876' where emp_name='Monika'");
+		System.out.println("update query result is "+update_result);
 		System.out.println("Enter the sql query you want to execute");
-		Boolean result = st.execute(sc.nextLine());
-		System.out.println("query result is "+result);
+		Boolean select_result = st.execute(sc.nextLine());
+		System.out.println("select query result is "+select_result);
 		ResultSet rs=st.getResultSet();
 		while(rs.next())
 		{
+		//rs.absolute(2);
 		System.out.println(rs.getString(1)+"...."+rs.getString(2));	
 		}
-		con.close();
+		//con.close();
 		
 	}
 		finally
