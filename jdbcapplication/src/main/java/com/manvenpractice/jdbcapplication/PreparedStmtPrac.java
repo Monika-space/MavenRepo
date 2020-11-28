@@ -51,6 +51,7 @@ public class PreparedStmtPrac {
 		{
  		System.out.println(rs1.getString(1)+"...."+rs1.getString(2));	
 		}
+		con.close();
 
 	}
 
