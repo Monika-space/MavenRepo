@@ -1,25 +1,45 @@
 package com.manvenpractice.HibrenateApplication;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Entity
-public class SampleFirstHibernateApp {
-	@javax.persistence.Id
-	private String Name;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.Cacheable;
+import javax.persistence.Column;
+
+@Entity(name="Employee_Table")
+@Cacheable
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
+public class SampleFirstHibernateApp //persistant class
+{
+	
+	@Id
+	@Column(name="Emp_id")
 	private int Id;
-	public String getName() {
-		return Name;
-	}
-	public void setName(String name) {
-		Name = name;
-	}
+	private EmployeeName Name;
+
 	public int getId() {
 		return Id;
 	}
 	public void setId(int id) {
 		Id = id;
 	}
-	
-	
 
+	public EmployeeName getName() {
+		return Name;
+	}
+	public void setName(EmployeeName name) {
+		Name = name;
+	}
+	@Override
+	public String toString() {
+		return "SampleFirstHibernateApp [Name=" + Name + ", Id=" + Id + "]";
+	}
+
+
+
+
+	
 }

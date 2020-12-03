@@ -22,7 +22,7 @@ public class PreparedStmtPrac {
 		{
  		System.out.println(rs.getString(1)+"...."+rs.getString(2));	
 		}
-		System.out.println("inserting recoreds to the employee table");
+		System.out.println("inserting records to the employee table");
 		PreparedStatement ps= con.prepareStatement("insert into Employee values(?,?)");
 		System.out.println("How many records you want to insert");
 		int ParameterIndex, count,i=1;
