@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:int="http://www.springframework.org/schema/integration"
+  xmlns:int-xml="http://www.springframework.org/schema/integration/xml"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/integration
+    https://www.springframework.org/schema/integration/spring-integration.xsd
+    http://www.springframework.org/schema/integration/xml
+    https://www.springframework.org/schema/integration/xml/spring-integration-xml.xsd">
+    
+    <bean id="student1" class="com.springcore.Student.StudentAttributes">
+    <property name="StudentName" value="monika"/>
+    <property name="MarksPercentage" value="89"/>
+    <property name="RollNo" value="1271031"/>
+    </bean>
+    <bean id="student2" class="com.springcore.Student.StudentAttributes">
+    <property name="StudentName" value="Sam"/>
+    <property name="MarksPercentage" value="90"/>
+    <property name="RollNo" value="1271032"/>
+    </bean>
+    <bean id="studdetails" class="com.springcore.Student.StudentDetails">
+    <property name="Students">
+    <list>
+    <ref bean="student1"/>
+    <ref bean="student2"/>
+    </list>
+    </property>
+    </bean>
+  
+</beans>    

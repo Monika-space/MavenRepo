@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:int="http://www.springframework.org/schema/integration"
+  xmlns:int-xml="http://www.springframework.org/schema/integration/xml"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/integration
+    https://www.springframework.org/schema/integration/spring-integration.xsd
+    http://www.springframework.org/schema/integration/xml
+    https://www.springframework.org/schema/integration/xml/spring-integration-xml.xsd">
+
+<bean id="EmployeeName" class="com.springcore.Employee.EmployeeName">
+<constructor-arg value="Monika"/>
+<constructor-arg value="Attuluri"/>
+</bean>
+
+<bean id = "EmployeeMailId" class="com.springcore.Employee.EmployeeMailId">
+<property name="Gmail" value="monika.chowdary16@gmail.com"/>
+</bean>
+
+<bean id="EmployeeDetails" class="com.springcore.Employee.EmployeeDetails">
+<property name="EmployeeName" ref="EmployeeName"/>
+<property name="EmployeeID" value="MA5037876"/>
+<property name="EmployeeMailId" ref="EmployeeMailId"/>
+<property name="Domain" value="BNFS"/>
+</bean>
+
+</beans>
